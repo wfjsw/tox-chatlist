@@ -23,7 +23,7 @@ tox.on('friendRequest', function(e) {
     var friend = tox.addFriendNoRequestSync(e.publicKey());
     console.log('Received friend request: ' + e.message());
     console.log('Accepted friend request from ' + e.publicKeyHex());
-    sendFriendMessage(friend, config.welcome, 0); // CONFIG ITEM
+    tox.sendFriendMessage(friend, config.welcome, 0); // CONFIG ITEM
     friends = tox.getFriendListSync();
 });
 
