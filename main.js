@@ -1,9 +1,17 @@
 var toxcore = require('toxcore');
 var config = require('./config.example.js');
-var tox = new toxcore.Tox({
-    path: config.lib_path,
-    data: 'save.tox'
-});
+var fs = require('fs');
+var tox;
+if (fs.existsSync('save.tox')) 
+    tox = new toxcore.Tox({
+        path: config.lib_path,
+        data: 'save.tox'
+    });
+else
+    tox = new toxcore.Tox({
+        path: config.lib_path
+    });
+
 // Specify nodes to bootstrap from
 var bootstrap_nodes = require('./bootstrap_nodes.js');
 var friends = new Array();
