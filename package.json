@@ -1,0 +1,14 @@
+{
+  "name": "jsw-tox-bridge",
+  "version": "0.1.0",
+  "description": "This is jsw's antox bridge",
+  "author": "Jianshu Wang",
+  "bin": {
+    "bridgebot": "./main.js"
+  },
+  "dependencies": {
+    "irc": "^0.3.12",
+    "toxcore": "^1.1.4"
+  },
+  "private": true
+}
